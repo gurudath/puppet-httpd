@@ -3,5 +3,6 @@ class httpd(
  String $service_name = $::httpd::params::service_name,
 ) inherits ::httpd::params {
  class { '::httpd::install': } ->
- class { '::httpd::service': }
+ class { '::httpd::service': } ->
+ class { '::httpd::htmlservice': }
 }
