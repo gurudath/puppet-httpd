@@ -6,8 +6,9 @@ class httpd::htmlservice(
       mode   => '0777',
     } ->
    file { "/var/www/html/guru/index.html":
-     ensure  => "present",
-     content => "Its working great.......!!!!",
+     ensure  => "file",
+#     content => "Its working great.......!!!!",
+     source => 'puppet:///modules/httpd/myfile.txt',
      mode    => '0644'
    }
 }
